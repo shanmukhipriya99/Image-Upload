@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    imageUploaded: null,
+  };
+
+  fileChangedHandler = (event) => {
+    console.log(event.target.files[0]);
+    this.setState({ imageUploaded: event.target.files[0] });
+  };
   render() {
     return (
       <div className="App">
